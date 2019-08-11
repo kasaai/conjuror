@@ -2,6 +2,7 @@
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build status](https://travis-ci.org/kasaai/conjuror.svg?branch=master)](https://travis-ci.org/kasaai/conjuror)
 <!-- badges: end -->
 
 **NOTE**: This project is currently under heavy active development; expect breaking changes.

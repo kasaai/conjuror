@@ -9,19 +9,17 @@ conjure <- function(incantation, ...) {
 
 #' Create a Specification for Simulation
 #'
-#' @param specs A named list.
 #' @param simulator The name of the simulator, which will be used as the class name for
-#' @param ... Optional additional arguments
-#'   the returned incantation object.
+#'     the returned incantation object.
+#' @param ... Simulator specifications.
 #' @export
-scribe <- function(specs, simulator, ...) {
-  new_incantation(specs, ..., class = simulator)
+scribe <- function(..., simulator) {
+  new_incantation(..., class = simulator)
 }
 
-new_incantation <- function(specs, ..., class = character()) {
+new_incantation <- function(..., class = character()) {
   structure(
     list(
-      specs,
       ...
     ),
     class = c(class, "incantation")

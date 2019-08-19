@@ -4,14 +4,12 @@
 \alias{scribe}
 \title{Create a Specification for Simulation}
 \usage{
-scribe(specs, simulator, ...)
+scribe(..., simulator)
 }
 \arguments{
-\item{specs}{A named list.}
+\item{...}{Simulator specifications.}
 
-\item{simulator}{The name of the simulator, which will be used as the class name for}
-
-\item{...}{Optional additional arguments
+\item{simulator}{The name of the simulator, which will be used as the class name for
 the returned incantation object.}
 }
 \description{

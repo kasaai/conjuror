@@ -1,0 +1,57 @@
+---
+title: "Individual Claims"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{individual-claims}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This article outlines the conventions for simulators that generate individual claims data.
+
+#### Data Format
+
+Each row should represent the state of a claim at one point in time.
+
+Good:
+
+```{r echo = FALSE}
+tibble::tribble(
+  ~ claim_id, ~accident_year, ~development_year, ~paid_loss,
+  "00001", 2000L, 1L, 250,
+  "00001", 2000L, 2L, 150,
+  "00001", 2000L, 3L, 50
+)
+```
+
+Bad:
+
+```{r echo = FALSE}
+tibble::tribble(
+  ~ claim_id, ~accident_year, ~paid_loss_1, ~paid_loss_2, ~paid_loss_3,
+  "00001", 2000L, 250, 150, 50
+)
+```
+
+Variables with redundant information should not be included. E.g. if `accident_year` and `reporting_delay` are included, `reporting_lag` should not be included.
+
+#### Column Names and Types
+
+```{r, echo = FALSE}
+tbl <- tibble::tribble(
+  ~ Description, ~ `Preferred Pattern`, ~ Example, ~  Type,
+  "Accident period", "`accident_*`", "`accident_year`", "integer",
+  "Identifiers", "`*_id`", "`claim_id`", "character",
+  "Development period", "`development_*`", "`development_year`", "integer",
+  "Incremental paid loss", "", "`paid_loss`", "double",
+  "Categorical claim and policy characteristics", "", "`claimant_age`", "character"
+)
+knitr::kable(tbl)
+```

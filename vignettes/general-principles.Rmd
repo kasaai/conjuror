@@ -1,0 +1,22 @@
+---
+title: "General Principles"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{general-principles}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+While the data formats and interfaces will be different for each discipline, there are a few conventions that we follow in general.
+
+- The output data should be [tidy](http://vita.had.co.nz/papers/tidy-data.html).
+- The output should be a `tibble`.
+- All argument names and variable names should be in `snake_case`.
+- The `print()` method should include a short description on what each row represents.

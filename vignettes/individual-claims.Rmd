@@ -14,7 +14,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-This article outlines the conventions for simulators that generate individual claims data.
+This article outlines the conventions for simulators that generate individual claims data for P&C (aka general and nonlife) insurance.
+
+**Note: these guidelines are currently under active development, please open an issue or [drop by slack](https://kasaai.slack.com/messages/CH4SAKX4G) if you have sugguestions!**
 
 #### Data Format
 
@@ -40,9 +42,13 @@ tibble::tribble(
 )
 ```
 
+We note that the output should be at the most granular level possible, which allows the user to aggregate up as needed. For example, if instead of accident year, the simulator produces accident dates and transaction dates, those should be included instead of accident/development periods.
+
 Variables with redundant information should not be included. E.g. if `accident_year` and `reporting_delay` are included, `reporting_lag` should not be included.
 
 #### Column Names and Types
+
+In the following table, we list the preferred names for various variables that may be included in the output of a simulator. If you're writing a conjuror implementation that introduces new names, please open an issue or PR with the proposal.
 
 ```{r, echo = FALSE}
 tbl <- tibble::tribble(

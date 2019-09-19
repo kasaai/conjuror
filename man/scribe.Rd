@@ -10,7 +10,7 @@ scribe(..., simulator)
 \item{...}{Simulator specifications.}
 
 \item{simulator}{The name of the simulator, which will be used as the class name for
-the returned incantation object.}
+the returned charm object.}
 }
 \description{
 Create a Specification for Simulation

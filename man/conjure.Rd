@@ -4,10 +4,10 @@
 \alias{conjure}
 \title{Simulate Data Using Provided Specs}
 \usage{
-conjure(incantation, ...)
+conjure(charm, ...)
 }
 \arguments{
-\item{incantation}{An `incantation` object.}
+\item{charm}{An `charm` object.}
 
 \item{...}{Optional additional arguments.}
 }

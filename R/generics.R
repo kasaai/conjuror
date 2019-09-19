@@ -14,7 +14,7 @@ conjure <- function(charm, ...) {
 #' @param ... Simulator specifications.
 #' @export
 scribe <- function(..., simulator) {
-  new_charm(..., class = paste0("charm_", simulator))
+  new_charm(..., class = simulator)
 }
 
 new_charm <- function(..., class = character()) {

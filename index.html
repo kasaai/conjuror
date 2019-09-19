@@ -31,7 +31,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">conjuror</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9001</span>
       </span>
     </div>
 
@@ -87,9 +87,9 @@
 <div id="framework" class="section level2">
 <h2 class="hasAnchor">
 <a href="#framework" class="anchor"></a>Framework</h2>
-<p>The main class in conjuror is <code>incantation</code>, representing a specification that includes parameters needed to define a simulation run. The conjuror package provides the <code><a href="reference/scribe.html">scribe()</a></code> function as the constructor of incantations, and package authors can call it from a user-facing helper function. The <code><a href="reference/conjure.html">conjure()</a></code> method is an S3 generic, which should be implemented for each incantation class. In other words, a simulation package should provide at least two user-facing functions:</p>
+<p>The main class in conjuror is <code>charm</code>, representing a specification that includes parameters needed to define a simulation run. The conjuror package provides the <code><a href="reference/scribe.html">scribe()</a></code> function as the constructor of charms, and package authors can call it from a user-facing helper function. The <code><a href="reference/conjure.html">conjure()</a></code> method is an S3 generic, which should be implemented for each charm class. In other words, a simulation package should provide at least two user-facing functions:</p>
 <ol>
-<li>A helper function, e.g. <code>my_simulator()</code>, that takes user-input parameters and returns an object of class <code><a href="https://rdrr.io/r/base/c.html">c("my_simulator", "incantation")</a></code>.</li>
+<li>A helper function, e.g. <code>my_simulator()</code>, that takes user-input parameters and returns an object of class <code><a href="https://rdrr.io/r/base/c.html">c("my_simulator", "charm")</a></code>.</li>
 <li>A <code>conjure.my_simulator()</code> method that performs the actual simulation.</li>
 </ol>
 <p>It is expected that parameters related to mathematical properties of the simulation be defined in the constructor, while parameters dealing with runtime behavior, such as random seeds and parallelism, be defined in the <code><a href="reference/conjure.html">conjure()</a></code> method.</p>
